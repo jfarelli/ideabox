@@ -5,19 +5,35 @@
 body {
   display: flex;
   height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  color: #1F1F3D;
 }
 
-nav{
+h1, h2, h3, h4, h5, h6, label{
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #E9E9F3;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #BFBFDD;
+}
+
+nav {
   background-color: #1F1F3D;
-  color: #e9e9f3;
-  font-family: Open Sans, Bold;
   width: 16rem;
 }
-/* adjust html for separation line? or adjust css borders*/
-div .filter {
-  font-family: Open Sans, Light;
-  background-color: #1F1F3D;
-  color: #BFBFDD;
+
+button {
+  height: 2.75rem;
+  font-weight: bold;
+  width: 100%;
+  color: #E9E9F3;
+  text-align: center;
 }
 
 .content-wrapper {
@@ -32,6 +48,9 @@ div .filter {
   width: 300px;
   height: 50%;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .notes-container {
@@ -40,31 +59,24 @@ div .filter {
   width: 100%;
 }
 
+.form {
+  width: 300px;
+}
+
+.form-input input {
+  display: block;
+  width: 100%;
+}
+
 .starred-button {
-font-family: Open Sans, Bold;
-background-color: #5356A4;
-color: #E9E9F3;
+  background-color: #5356A4;
 }
 
 .save-button {
-  font-family: Open Sans, Bold;
   background-color: #1F1F3D;
-  color: #E9E9F3;
-  text-align: center;
-}
-
-#search-box {
-  font-family: Open Sans, Light;
-  color: #1F1F3D;
 }
 
 .search-button {
+  width: 2.75rem;
   background-color: #1F1F3D;
-  height: 30px;
-  width: 30px;
-}
-
-p {
-  font-family: Open Sans, Bold;
-  color: #1F1F3D;
 }
