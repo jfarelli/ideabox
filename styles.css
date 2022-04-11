@@ -1,0 +1,56 @@
+* {
+  border: 1px solid red;
+}
+
+body {
+  display: flex;
+
+}
+
+nav{
+  background-color: #1F1F3D;
+  color: #e9e9f3;
+  font-family: Open Sans, Bold;
+  display: flex;
+  height: 100%;
+  margin: 0;
+}
+/* adjust html for separation line? or adjust css borders*/
+div .filter {
+  font-family: Open Sans, Light;
+  background-color: #1F1F3D;
+  color: #BFBFDD;
+}
+
+.container {
+  background-color: #a9aad2;
+}
+
+.starred-button {
+font-family: Open Sans, Bold;
+background-color: #5356A4;
+color: #E9E9F3;
+}
+
+.save-button {
+  font-family: Open Sans, Bold;
+  background-color: #1F1F3D;
+  color: #E9E9F3;
+  text-align: center;
+}
+
+#search-box {
+  font-family: Open Sans, Light;
+  color: #1F1F3D;
+}
+
+.search-button {
+  background-color: #1F1F3D;
+  height: 30px;
+  width: 30px;
+}
+
+p {
+  font-family: Open Sans, Bold;
+  color: #1F1F3D;
+}
