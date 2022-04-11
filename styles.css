@@ -4,16 +4,13 @@
 
 body {
   display: flex;
-
+  height: 100vh;
 }
 
 nav{
   background-color: #1F1F3D;
   color: #e9e9f3;
   font-family: Open Sans, Bold;
-  display: flex;
-  height: 100%;
-  margin: 0;
 }
 /* adjust html for separation line? or adjust css borders*/
 div .filter {
