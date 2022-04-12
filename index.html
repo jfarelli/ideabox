@@ -10,26 +10,36 @@
   </head>
   <body>
     <nav>
-      <h1 class="idea">IdeaBox</h1>    
-      <div>
-        <h2 class="filter">Filter Starred Ideas</h2>
+      <h1 class="idea">IdeaBox</h1>
+      <div class="filter-container">
+        <h2 class="filter-heading">Filter Starred Ideas</h2>
         <button class="starred-button">Show Starred Ideas</button>
       </div>
     </nav>
-    <section>
-      <div class="container">
-        <p>Title</p>
-        <input type="text" name="idea-title" id="idea-title"></input>
-        <p>Body</p>
-        <input type="text" name="body-title" id="body-title"></input>
+    <div class="content-wrapper">
+    <section class="form-container">
+      <form class="form" id="idea-form">
+        <div class="form-input">
+          <label for="idea-title">Title</label>
+          <input type="text" name="idea-title" id="idea-title"></input>
+        </div>
+        <div class="form-input">
+          <label for="body-title">Body</label>
+          <textarea rows="4" cols="50" name="body" form="idea-form">
+Enter text here...</textarea>
+        </div>
         <button class="save-button">Save</button>
+        <div class="search-input">
         <button class="search-button">
           <img src="assets/search.svg" alt="magnifying-glass">
         </button>
         <input type="text" name="search-box" id="search-box" placeholder="Search ideas"></input>
       </div>
-      <div>
-      </div>
+      </form>
+    </section>
+    <section class="notes-container">
+    </section>
+  </div>
   </body>
   <script type="text/javascript" src="Idea.js"></script>
   <script type="text/javascript" src="main.js"></script>

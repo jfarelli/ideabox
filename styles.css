@@ -1,53 +1,128 @@
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 
 body {
   display: flex;
   height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  color: #1F1F3D;
 }
 
-nav{
-  background-color: #1F1F3D;
-  color: #e9e9f3;
-  font-family: Open Sans, Bold;
+h1, h2, h3, h4, h5, h6, label{
+  font-weight: bold;
 }
-/* adjust html for separation line? or adjust css borders*/
-div .filter {
-  font-family: Open Sans, Light;
-  background-color: #1F1F3D;
+
+h1 {
+  font-size: 1.5rem;
+  color: #E9E9F3;
+  padding: 1rem;
+}
+
+h2 {
+  font-size: 1rem;
   color: #BFBFDD;
 }
 
-.container {
+nav {
+  background-color: #1F1F3D;
+  width: 16rem;
+}
+
+button {
+  height: 2.75rem;
+  font-weight: bold;
+  width: 100%;
+  color: #E9E9F3;
+  text-align: center;
+  border: none;
+}
+
+input {
+  height: 2.75rem;
+  box-sizing: border-box;
+  border: solid 2px #5356A4;
+}
+
+.filter-container {
+  padding: 1rem;
+  border-top: solid 1px #353567;
+  border-bottom: solid 1px #353567;
+}
+
+.filter-heading {
+  margin: 1rem 0;
+}
+
+.content-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.form-container {
   background-color: #a9aad2;
+  width: 300px;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notes-container {
+  background-color: #EAEAF4;
+  height: 50%;
+  width: 100%;
+}
+
+.form {
+  width: 300px;
+}
+
+.form-input {
+  margin-bottom: 1rem;
+}
+
+.form-input input {
+  /* display: block; */
+  width: 100%;
+  margin-top: .25rem;
+}
+
+.form-input textarea {
+  width: 100%;
+  margin-top: .25rem;
+  box-sizing: border-box;
+  border: solid 2px #5356A4;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  width: 100%;
 }
 
 .starred-button {
-font-family: Open Sans, Bold;
-background-color: #5356A4;
-color: #E9E9F3;
+  background-color: #5356A4;
+  margin: 1rem 0;
 }
 
 .save-button {
-  font-family: Open Sans, Bold;
   background-color: #1F1F3D;
-  color: #E9E9F3;
-  text-align: center;
-}
-
-#search-box {
-  font-family: Open Sans, Light;
-  color: #1F1F3D;
+  margin-bottom: 1rem;
 }
 
 .search-button {
+  width: 2.75rem;
   background-color: #1F1F3D;
-  height: 30px;
-  width: 30px;
 }
 
-p {
-  font-family: Open Sans, Bold;
-  color: #1F1F3D;
+.search-button img {
+  height: 1.5rem;
+  width: 1.5rem;
 }
