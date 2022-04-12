@@ -38,6 +38,12 @@ button {
   border: none;
 }
 
+input {
+  height: 2.75rem;
+  box-sizing: border-box;
+  border: solid 2px #5356A4;
+}
+
 .content-wrapper {
   width: 100%;
   display: flex;
@@ -71,11 +77,8 @@ button {
 
 .form-input input {
   /* display: block; */
-  height: 2.75rem;
   width: 100%;
   margin-top: .25rem;
-  box-sizing: border-box;
-  border: solid 2px #5356A4;
 }
 
 .form-input textarea {
@@ -85,6 +88,15 @@ button {
   border: solid 2px #5356A4;
 }
 
+.search-input {
+  display: flex;
+  align-items: center;
+}
+
+.search-input input {
+  width: 100%;
+}
+
 .starred-button {
   background-color: #5356A4;
 }
@@ -92,7 +104,6 @@ button {
 .save-button {
   background-color: #1F1F3D;
   margin-bottom: 1rem;
-
 }
 
 .search-button {
