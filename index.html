@@ -18,21 +18,22 @@
     </nav>
     <div class="content-wrapper">
     <section class="form-container">
-      <div class="form">
+      <form class="form" id="idea-form">
         <div class="form-input">
           <label for="idea-title">Title</label>
           <input type="text" name="idea-title" id="idea-title"></input>
         </div>
         <div class="form-input">
           <label for="body-title">Body</label>
-          <input type="text" name="body-title" id="body-title"></input>
+          <textarea rows="4" cols="50" name="body" form="idea-form">
+Enter text here...</textarea>
         </div>
         <button class="save-button">Save</button>
         <button class="search-button">
           <img src="assets/search.svg" alt="magnifying-glass">
         </button>
         <input type="text" name="search-box" id="search-box" placeholder="Search ideas"></input>
-      </div>
+      </form>
     </section>
     <section class="notes-container">
     </section>
