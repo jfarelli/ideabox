@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6, label{
 h1 {
   font-size: 1.5rem;
   color: #E9E9F3;
+  padding: 1rem;
 }
 
 h2 {
@@ -26,7 +27,6 @@ h2 {
 nav {
   background-color: #1F1F3D;
   width: 16rem;
-  padding: 1rem;
 }
 
 button {
@@ -42,6 +42,16 @@ input {
   height: 2.75rem;
   box-sizing: border-box;
   border: solid 2px #5356A4;
+}
+
+.filter-container {
+  padding: 1rem;
+  border-top: solid 1px #353567;
+  border-bottom: solid 1px #353567;
+}
+
+.filter-heading {
+  margin: 1rem 0;
 }
 
 .content-wrapper {
@@ -72,7 +82,7 @@ input {
 }
 
 .form-input {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .form-input input {
@@ -99,6 +109,7 @@ input {
 
 .starred-button {
   background-color: #5356A4;
+  margin: 1rem 0;
 }
 
 .save-button {
@@ -109,4 +120,9 @@ input {
 .search-button {
   width: 2.75rem;
   background-color: #1F1F3D;
+}
+
+.search-button img {
+  height: 1.5rem;
+  width: 1.5rem;
 }
