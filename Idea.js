@@ -1,12 +1,13 @@
-class Idea {
-  constructor() {
+ class Idea {
+   constructor(title, body) {
     this.id = Date.now();
-    this.title = [];
-    this.body = [];
-    this.star = false;
+    this.title = title
+    this.body = body
+    this.star = false
+    this.saved = false
   }
 
-  updateIdea() {
-// function updates the idea's starred state
+  updateIdea(){
+    this.star = !this.star
   }
-}
+ }
