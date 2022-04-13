@@ -10,6 +10,19 @@ var searchIdeasForm = document.querySelector("#search-box")
 
 //
 
+var savedIdeas = [];
+
+getIndexOfIdeas(id) {
+  for (var i = 0; i < savedIdeas.length; i++) {
+    if (id === savedIdeas[i].id) {
+      return i;
+    }
+  }
+}
+
+deleteIdeas(event) {
+  savedIdeas.splice(getIndexOfIdeas(parseInt(event.target.id)), 1)
+}
 
 //need to create buttons, querySelector, and eventListeners for:
 //star button, comment plus sign, x button
