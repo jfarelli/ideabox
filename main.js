@@ -23,13 +23,21 @@ function displayIdeaCard() {
   currentIdea = new Idea(titleInput.value, bodyInput.value);
   savedIdeas.push(currentIdea);
   ideasContainer.appendChild(generateIdeaCardHTML());
-  var star = document.querySelector(".star")
-  star.addEventListener("click", function() {
-    setStar(star, currentIdea)
-  })
+  setStarEventHandler()
 }
 
 // event handlers go here 👇
+function setStarEventHandler() {
+  var ideaCard = document.getElementById(`${currentIdea.id}`)
+  ideaCard.addEventListener("click", function(event) {
+    for (var i = 0; i < savedIdeas.length; i++) {
+      if (event.target.className.includes("star") && savedIdeas[i].id == event.currentTarget.id) {
+          return setStar(event.target, savedIdeas[i])
+      }
+    }
+  })
+}
+
 function handleKeyup(event) {
   if (titleInput.value && bodyInput.value){
     saveButton.disabled = false;
@@ -44,12 +52,12 @@ function resetForm() {
   handleKeyup();
 }
 
-function setStar(star, currentIdea) {
-  currentIdea.updateIdea();
-  if (currentIdea.star) {
-    star.src = "assets/star-active.svg";
+function setStar(star, savedIdea) {
+  savedIdea.updateIdea();
+  if (savedIdea.star) {
+    return star.src = "assets/star-active.svg";
   } else{
-    star.src = "assets/star.svg";
+    return star.src = "assets/star.svg";
   }
 }
 
@@ -71,7 +79,6 @@ function generateIdeaCardHTML() {
     <h4>Comment</h4>
   </div>
   `
-  console.log(currentIdeaDIV);
 
   return currentIdeaDIV;
 }
