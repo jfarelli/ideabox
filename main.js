@@ -4,12 +4,14 @@ var saveButton = document.querySelector(".save-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 var ideasContainer = document.querySelector(".ideas-container")
-
+var showStarred = document.querySelector(".starred-button");
 // we've provided you with some data to work with 👇
 var savedIdeas = [];
 var currentIdea;
 
 // event listeners go here 👇
+showStarred = document.addEventListener('click', showStarredIdeas);
+
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   displayIdeaCard()
@@ -58,4 +60,16 @@ function generateIdeaCardHTML() {
   </div>
   `
   return currentIdeaDIV;
+}
+
+
+function showStarredIdeas() {
+  if (this.star === true) {
+  displayIdeaCard();
+  showAllIdeas();
+  }
+}
+
+function showAllIdeas() {
+  showStarred.innerText = "Show All Ideas";
 }
