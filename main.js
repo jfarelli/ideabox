@@ -5,7 +5,6 @@ var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 var ideasContainer = document.querySelector(".ideas-container")
 
-
 // we've provided you with some data to work with 👇
 var savedIdeas = [];
 var currentIdea;
@@ -18,19 +17,6 @@ saveButton.addEventListener('click', function(event) {
   resetForm()
 }, true);
 //Doesnt re-render the page. Set to true because you want to prevent the default
-
-titleInput.addEventListener("keyup", checkForm)
-bodyInput.addEventListener("keyup", checkForm)
-
-// functions and event handlers go here 👇
-function checkForm(event) {
-	if (titleInput.value && bodyInput.value) {
-  	saveButton.disabled = false
-  } else {
-  	saveButton.disabled = true
-  }
-}
-//eventhandler.
 
 function displayIdeaCard() {
   //Eventhandler. In order to create a new instance of idea called currentIdea you have to pass through title and body input values from form.
@@ -64,11 +50,26 @@ function generateIdeaCardHTML() {
     <h4>Comment</h4>
   </div>
   `
-  // return all the HTML we just constructed
   return currentIdeaDIV;
 }
 
-function resetForm() {
-  titleInput.value = null
-  bodyInput.value = null
+var ideaTitle = document.getElementById("idea-title");
+var ideaBody = document.getElementById("body-title");
+var saveIdeaButton = document.getElementById("save-button");
+var formInput = document.getElementById('idea-form');
+
+formInput.addEventListener('submit', function handleSubmit(event) {
+  event.preventDefault();
+  formInput.reset();
+});
+
+ideaTitle.addEventListener('keyup', handleKeyup);
+ideaBody.addEventListener('keyup', handleKeyup);
+
+function handleKeyup(event) {
+  if (ideaTitle.value && ideaBody.value){
+    saveIdeaButton.disabled = false;
+  } else {
+    saveIdeaButton.disabled = true;
+  }
 }

@@ -178,3 +178,9 @@ input {
   height: 1.5rem;
   width: 1.5rem;
 }
+
+#save-button:disabled,
+button[disabled] {
+  background-color: #5356A4;
+  cursor: help;
+}
