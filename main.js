@@ -29,6 +29,7 @@ function displayIdeaCard() {
   })
 }
 
+// event handlers go here 👇
 function handleKeyup(event) {
   if (titleInput.value && bodyInput.value){
     saveButton.disabled = false;
