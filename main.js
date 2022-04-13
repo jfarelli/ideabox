@@ -48,9 +48,9 @@ function generateIdeaCardHTML() {
     <img src="assets/star.svg" alt="star" class="icon" />
     <img src="assets/delete.svg" alt="delete" class="icon" />
   </div>
-  <div class="card-content">
-    <h3>${currentIdea.title}</h3>
-    <p>${currentIdea.body}</p>
+  <div class="card-content" id="card-content">
+    <h3 id="current-title">${currentIdea.title}</h3>
+    <p id="current-body">${currentIdea.body}</p>
   </div>
   <div class="card-footer">
     <img src="assets/comment.svg" alt="comment" class="icon" />
@@ -58,4 +58,22 @@ function generateIdeaCardHTML() {
   </div>
   `
   return currentIdeaDIV;
+}
+
+
+function filterSearch() {
+  var input = document.getElementById("search-box");
+  var filter = input.value;
+  var title = document.getElementById("current-title");
+  var body = document.getElementById("current-body");
+  var currentIdea = new Idea(titleInput.value, bodyInput.value);
+  // Loop through all list items, and hide those who don't match the search query
+  for (var i = 0; i < currentIdea.length; i++) {
+    var txtValue = currentIdea.title.textContent || currentIdea.body.textContent;
+    if (txtValue.indexOf(filter) > -1) {
+      currentIdea[i].style.display = "";
+    } else {
+      currentIdea[i].style.display = "none";
+    }
+  }
 }
