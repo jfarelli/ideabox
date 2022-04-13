@@ -53,23 +53,23 @@ function generateIdeaCardHTML() {
   return currentIdeaDIV;
 }
 
-var ideaTitle = document.getElementById("idea-title");
-var ideaBody = document.getElementById("body-title");
-var saveIdeaButton = document.getElementById("save-button");
-var formInput = document.getElementById('idea-form');
-
-formInput.addEventListener('submit', function handleSubmit(event) {
+ideasContainer.addEventListener('submit', function handleSubmit(event) {
   event.preventDefault();
-  formInput.reset();
+  ideasContainer.reset();
 });
 
-ideaTitle.addEventListener('keyup', handleKeyup);
-ideaBody.addEventListener('keyup', handleKeyup);
+titleInput.addEventListener('keyup', handleKeyup);
+bodyInput.addEventListener('keyup', handleKeyup);
 
 function handleKeyup(event) {
-  if (ideaTitle.value && ideaBody.value){
-    saveIdeaButton.disabled = false;
+  if (titleInput.value && bodyInput.value){
+    saveButton.disabled = false;
   } else {
-    saveIdeaButton.disabled = true;
+    saveButton.disabled = true;
   }
+}
+
+function resetForm() {
+  titleInput.value = null
+  bodyInput.value = null
 }
