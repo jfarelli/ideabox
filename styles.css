@@ -1,12 +1,9 @@
-/* * {
-  border: 1px solid red;
-} */
-
 body {
   display: flex;
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
   color: #1F1F3D;
+  background-color: #1F1F3D;
 }
 
 h1, h2, h3, h4, h5, h6, label{
@@ -36,6 +33,7 @@ button {
   color: #E9E9F3;
   text-align: center;
   border: none;
+  cursor: pointer;
 }
 
 input {
@@ -63,22 +61,72 @@ input {
 
 .form-container {
   background-color: #a9aad2;
-  width: 300px;
-  height: 50%;
+  min-height: 50%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.notes-container {
+.ideas-container {
   background-color: #EAEAF4;
-  height: 50%;
-  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.idea-card {
+  background-color: #FFFFFF;
+  height: 16rem;
+  width: 15rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border: solid 2px #1F1F3D;
+}
+
+.card-header {
+  background-color: #1F1F3D;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 .5rem;
+  margin-bottom: 1rem;
+}
+
+.card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 .75rem;
+  color: #1F1F3D;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.card-content p {
+  font-size: 1.25rem;
+}
+
+.card-footer {
+  background-color: #5356A4;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0 .5rem;
+  color: #E9E9F3
 }
 
 .form {
   width: 300px;
+  margin: 3rem;
 }
 
 .form-input {
@@ -86,7 +134,6 @@ input {
 }
 
 .form-input input {
-  /* display: block; */
   width: 100%;
   margin-top: .25rem;
 }
@@ -117,12 +164,17 @@ input {
   margin-bottom: 1rem;
 }
 
+.save-button:disabled, button[disabled] {
+  background-color: #444488;
+  cursor: default;
+}
+
 .search-button {
   width: 2.75rem;
   background-color: #1F1F3D;
 }
 
-.search-button img {
+.icon {
   height: 1.5rem;
   width: 1.5rem;
 }
