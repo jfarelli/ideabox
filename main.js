@@ -23,11 +23,11 @@ function displayIdeaCard() {
   currentIdea = new Idea(titleInput.value, bodyInput.value);
   savedIdeas.push(currentIdea);
   ideasContainer.appendChild(generateIdeaCardHTML());
-  setStarEventHandler()
+  setCardEventHandler()
 }
 
 // event handlers go here 👇
-function setStarEventHandler() {
+function setCardEventHandler() {
   var ideaCard = document.getElementById(`${currentIdea.id}`)
   ideaCard.addEventListener("click", function(event) {
     for (var i = 0; i < savedIdeas.length; i++) {
