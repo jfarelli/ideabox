@@ -16,7 +16,7 @@ saveButton.addEventListener('click', function(event) {
   displayIdeaCard()
   resetForm()
 }, true);
-//true because you want to prevent the default
+//Doesnt re-render the page. Set to true because you want to prevent the default
 
 titleInput.addEventListener("keyup", checkForm)
 bodyInput.addEventListener("keyup", checkForm)
@@ -29,9 +29,10 @@ function checkForm(event) {
   	saveButton.disabled = true
   }
 }
+//eventhandler.
 
 function displayIdeaCard() {
-  //In order to create a new instance of idea called currentIdea you have to pass through title and body input values from form.
+  //Eventhandler. In order to create a new instance of idea called currentIdea you have to pass through title and body input values from form.
   currentIdea = new Idea(titleInput.value, bodyInput.value);
 
   savedIdeas.push(currentIdea);
