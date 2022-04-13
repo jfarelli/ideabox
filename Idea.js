@@ -5,13 +5,14 @@
  class Idea {
    constructor(title, body) {
      this.id = Date.now();
-     this.title = title
-     this.body = body
-     this.starred = false
+     this.title = title;
+     this.body = body;
+     this.star = false;
    }
 
    updateIdea() {
   // updateIdea (should update the idea’s starred state
-    this.starred = !this.starred
+  //bang operator flips boolean, but you have to assing the property to the opposite of the current property value.
+    this.star = !this.star;
    }
  }

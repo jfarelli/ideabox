@@ -9,6 +9,7 @@ var ideasContainer = document.querySelector(".ideas-container")
 // we've provided you with some data to work with 👇
 var savedIdeas = [];
 var currentIdea;
+//global variables
 
 // event listeners go here 👇
 saveButton.addEventListener('click', function(event) {
@@ -38,7 +39,6 @@ function displayIdeaCard() {
   savedIdeas.push(currentIdea);
   // target the ideas container and append the HTML returned from the generateIdeaCardHTML function
   ideasContainer.appendChild(generateIdeaCardHTML())
-
 }
 
 function generateIdeaCardHTML() {
