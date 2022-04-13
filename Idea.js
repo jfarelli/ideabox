@@ -1,5 +1,5 @@
-class Idea {
-  constructor(title, body) {
+ class Idea {
+   constructor(title, body) {
     this.id = Date.now();
     this.title = title
     this.body = body
@@ -10,4 +10,4 @@ class Idea {
   updateIdea(){
     this.star = !this.star
   }
-}
+ }
