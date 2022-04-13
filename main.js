@@ -4,13 +4,13 @@ var saveButton = document.querySelector(".save-button");
 var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 var ideasContainer = document.querySelector(".ideas-container")
-var showStarred = document.querySelector(".starred-button");
+// var showStarred = document.querySelector(".starred-button");
 // we've provided you with some data to work with 👇
 var savedIdeas = [];
 var currentIdea;
 
 // event listeners go here 👇
-showStarred = document.addEventListener('click', showStarredIdeas);
+// showStarred = document.addEventListener('click', showStarredIdeas);
 
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
@@ -69,7 +69,8 @@ function showStarredIdeas() {
   showAllIdeas();
   }
 }
+var showStarred = document.getElementById("starred-button");
 
-function showAllIdeas() {
-  showStarred.innerText = "Show All Ideas";
-}
+showStarred.addEventListener('click', function handleClick() {
+  showStarred.textContent = 'Show All Ideas';
+});
