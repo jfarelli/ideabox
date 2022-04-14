@@ -72,9 +72,9 @@ function generateIdeaCardHTML() {
     <img src="assets/star.svg" alt="star" class="icon star" />
     <img src="assets/delete.svg" alt="delete" class="icon" />
   </div>
-  <div class="card-content">
-    <h3>${currentIdea.title}</h3>
-    <p>${currentIdea.body}</p>
+  <div class="card-content" id="card-content">
+    <h3 id="current-title">${currentIdea.title}</h3>
+    <p id="current-body">${currentIdea.body}</p>
   </div>
   <div class="card-footer">
     <img src="assets/comment.svg" alt="comment" class="icon" />
@@ -83,6 +83,25 @@ function generateIdeaCardHTML() {
   `
 
   return currentIdeaDIV;
+}
+
+
+function filterSearch() {
+  var input = document.getElementById("search-box");
+  var filter = input.value;
+  ideasContainer;
+  var ideasCard = ideasContainer.getElementsByClassName('idea-card');
+      for (i = 0; i < ideasCard.length; i++) {
+        var ideaContent = ideasCard[i].querySelector(".card-content");
+        var title = ideaContent.querySelector("#current-title");
+        var body = ideaContent.querySelector("#current-body");
+        var txtValue = title.innerText || body.innerText;
+        if (txtValue.indexOf(filter) > -1) {
+            ideasCard[i].style.display = "";
+        } else {
+            ideasCard[i].style.display = "none";
+        }
+    }
 }
 
 
@@ -97,3 +116,4 @@ var showStarred = document.getElementById("starred-button");
 showStarred.addEventListener('click', function handleClick() {
   showStarred.textContent = 'Show All Ideas';
 });
+
