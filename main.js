@@ -60,20 +60,20 @@ function generateIdeaCardHTML() {
   return currentIdeaDIV;
 }
 
-
 function filterSearch() {
   var input = document.getElementById("search-box");
   var filter = input.value;
-  var title = document.getElementById("current-title");
-  var body = document.getElementById("current-body");
-  var currentIdea = new Idea(titleInput.value, bodyInput.value);
-  // Loop through all list items, and hide those who don't match the search query
-  for (var i = 0; i < currentIdea.length; i++) {
-    var txtValue = currentIdea.title.textContent || currentIdea.body.textContent;
-    if (txtValue.indexOf(filter) > -1) {
-      currentIdea[i].style.display = "";
-    } else {
-      currentIdea[i].style.display = "none";
+  ideasContainer;
+  var ideasCard = ideasContainer.getElementsByClassName('idea-card');
+      for (i = 0; i < ideasCard.length; i++) {
+        var ideaContent = ideasCard[i].querySelector(".card-content");
+        var title = ideaContent.querySelector("#current-title");
+        var body = ideaContent.querySelector("#current-body");
+        var txtValue = title.innerText || body.innerText;
+        if (txtValue.indexOf(filter) > -1) {
+            ideasCard[i].style.display = "";
+        } else {
+            ideasCard[i].style.display = "none";
+        }
     }
-  }
 }

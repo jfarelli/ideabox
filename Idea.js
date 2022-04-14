@@ -4,7 +4,7 @@
     this.title = title
     this.body = body
     this.star = false
-    this.saved = false
+    // this.saved = false
   }
 
   updateIdea(){
