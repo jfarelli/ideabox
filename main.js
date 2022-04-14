@@ -36,6 +36,10 @@ function setCardEventHandler() {
       if (event.target.className.includes("star") && savedIdeas[i].id == event.currentTarget.id) {
           return setStar(event.target, savedIdeas[i])
       }
+      if (event.target.className.includes("delete") && savedIdeas[i].id == event.currentTarget.id) {
+        savedIdeas.splice(i, 1)
+        event.currentTarget.remove();
+      }
     }
   })
 }
@@ -70,7 +74,7 @@ function generateIdeaCardHTML() {
   currentIdeaDIV.innerHTML = `
   <div class="card-header">
     <img src="assets/star.svg" alt="star" class="icon star" />
-    <img src="assets/delete.svg" alt="delete" class="icon" />
+    <img src="assets/delete.svg" alt="delete" class="icon delete" />
   </div>
   <div class="card-content" id="card-content">
     <h3 id="current-title">${currentIdea.title}</h3>
@@ -116,4 +120,3 @@ var showStarred = document.getElementById("starred-button");
 showStarred.addEventListener('click', function handleClick() {
   showStarred.textContent = 'Show All Ideas';
 });
-
