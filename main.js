@@ -22,7 +22,20 @@ bodyInput.addEventListener('keyup', handleKeyup);
 function displayIdeaCard() {
   currentIdea = new Idea(titleInput.value, bodyInput.value);
   savedIdeas.push(currentIdea);
-  ideasContainer.appendChild(generateIdeaCardHTML())
+  ideasContainer.appendChild(generateIdeaCardHTML());
+  setCardEventHandler()
+}
+
+// event handlers go here 👇
+function setCardEventHandler() {
+  var ideaCard = document.getElementById(`${currentIdea.id}`)
+  ideaCard.addEventListener("click", function(event) {
+    for (var i = 0; i < savedIdeas.length; i++) {
+      if (event.target.className.includes("star") && savedIdeas[i].id == event.currentTarget.id) {
+          return setStar(event.target, savedIdeas[i])
+      }
+    }
+  })
 }
 
 function handleKeyup(event) {
@@ -39,13 +52,22 @@ function resetForm() {
   handleKeyup();
 }
 
+function setStar(star, savedIdea) {
+  savedIdea.updateIdea();
+  if (savedIdea.star) {
+    return star.src = "assets/star-active.svg";
+  } else{
+    return star.src = "assets/star.svg";
+  }
+}
+
 function generateIdeaCardHTML() {
   var currentIdeaDIV = document.createElement('div')
   currentIdeaDIV.setAttribute('id', currentIdea.id)
   currentIdeaDIV.setAttribute('class', 'idea-card')
   currentIdeaDIV.innerHTML = `
   <div class="card-header">
-    <img src="assets/star.svg" alt="star" class="icon" />
+    <img src="assets/star.svg" alt="star" class="icon star" />
     <img src="assets/delete.svg" alt="delete" class="icon" />
   </div>
   <div class="card-content">
@@ -57,5 +79,6 @@ function generateIdeaCardHTML() {
     <h4>Comment</h4>
   </div>
   `
+
   return currentIdeaDIV;
 }
