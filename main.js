@@ -99,7 +99,7 @@ function filterSearch() {
         var ideaContent = ideasCard[i].querySelector(".card-content");
         var title = ideaContent.querySelector("#current-title");
         var body = ideaContent.querySelector("#current-body");
-        var txtValue = title.innerText || body.innerText;
+        var txtValue = title.innerText && body.innerText;
         if (txtValue.indexOf(filter) > -1) {
             ideasCard[i].style.display = "";
         } else {
