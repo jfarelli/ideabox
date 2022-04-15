@@ -4,6 +4,8 @@
 
 **Here's a little "how-to" to get you started!**
 
+* Visit our website @ [IdeaBox](https://jfarelli.github.io/ideabox/)
+
 * Got an idea? Type in a **Title** that defines it, and then head to the **Body** to "flesh out" the details!
 
 * Is your idea solid? Then hit that **Save** button to drop your idea down below, and then start another...and another...and...another???
