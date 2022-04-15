@@ -1,17 +1,18 @@
 // A main.js file that contains all DOM related JavaScript.
 // query selector variables go here 👇
-var saveButton = document.querySelector(".save-button");
-var titleInput = document.querySelector("#title-input");
 var bodyInput = document.querySelector("#body-input");
 var ideasContainer = document.querySelector(".ideas-container")
-// var showStarred = document.querySelector(".starred-button");
-// we've provided you with some data to work with 👇
+var ideaCards = ideasContainer.getElementsByClassName('idea-card');
+var saveButton = document.querySelector(".save-button");
+var showStarred = document.querySelector(".starred-button");
+var titleInput = document.querySelector("#title-input");
+
+// Global variables 👇
 var savedIdeas = [];
 var currentIdea;
 
 // event listeners go here 👇
-// showStarred = document.addEventListener('click', showStarredIdeas);
-
+showStarred.addEventListener('click', showStarredIdeas);
 saveButton.addEventListener('click', function(event) {
   event.preventDefault()
   displayIdeaCard()
@@ -20,13 +21,6 @@ saveButton.addEventListener('click', function(event) {
 
 titleInput.addEventListener('keyup', handleKeyup);
 bodyInput.addEventListener('keyup', handleKeyup);
-
-function displayIdeaCard() {
-  currentIdea = new Idea(titleInput.value, bodyInput.value);
-  savedIdeas.push(currentIdea);
-  ideasContainer.appendChild(generateIdeaCardHTML());
-  setCardEventHandler()
-}
 
 // event handlers go here 👇
 function setCardEventHandler() {
@@ -42,6 +36,13 @@ function setCardEventHandler() {
       }
     }
   })
+}
+
+function displayIdeaCard() {
+  currentIdea = new Idea(titleInput.value, bodyInput.value);
+  savedIdeas.push(currentIdea);
+  ideasContainer.appendChild(generateIdeaCardHTML());
+  setCardEventHandler()
 }
 
 function handleKeyup(event) {
@@ -85,38 +86,39 @@ function generateIdeaCardHTML() {
     <h4>Comment</h4>
   </div>
   `
-
   return currentIdeaDIV;
 }
-
 
 function filterSearch() {
   var input = document.getElementById("search-box");
   var filter = input.value;
-  ideasContainer;
-  var ideasCard = ideasContainer.getElementsByClassName('idea-card');
-      for (i = 0; i < ideasCard.length; i++) {
-        var ideaContent = ideasCard[i].querySelector(".card-content");
+      for (i = 0; i < ideaCards.length; i++) {
+        var ideaContent = ideaCards[i].querySelector(".card-content");
         var title = ideaContent.querySelector("#current-title");
         var body = ideaContent.querySelector("#current-body");
-        var txtValue = title.innerText && body.innerText;
+        var txtValue = title.innerText + body.innerText;
         if (txtValue.indexOf(filter) > -1) {
-            ideasCard[i].style.display = "";
+            ideaCards[i].style.display = "";
         } else {
-            ideasCard[i].style.display = "none";
+            ideaCards[i].style.display = "none";
         }
     }
 }
 
-
 function showStarredIdeas() {
-  if (this.star === true) {
-  displayIdeaCard();
-  showAllIdeas();
+  console.log(ideaCards);
+  if (showStarred.textContent.includes('Show Starred Ideas')) {
+    showStarred.textContent = 'Show All Ideas';
+    for (var i = 0; i < savedIdeas.length; i++) {
+      var idsMatch = savedIdeas[i].id == ideaCards[i].id
+      if (idsMatch && !savedIdeas[i].star) {
+        ideaCards[i].style.display = "none";
+      }
+    }
+  } else if (showStarred.textContent.includes('Show All Ideas')) {
+    showStarred.textContent = 'Show Starred Ideas';
+    for (var i = 0; i < ideaCards.length; i++) {
+      ideaCards[i].style.display = "";
+    }
   }
 }
-var showStarred = document.getElementById("starred-button");
-
-showStarred.addEventListener('click', function handleClick() {
-  showStarred.textContent = 'Show All Ideas';
-});
