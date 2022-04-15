@@ -159,6 +159,10 @@ input {
   margin: 1rem 0;
 }
 
+.star, .delete {
+  cursor: pointer;
+}
+
 .save-button {
   background-color: #1F1F3D;
   margin-bottom: 1rem;
@@ -171,6 +175,11 @@ input {
 
 .search-button {
   width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   background-color: #1F1F3D;
 }
 
